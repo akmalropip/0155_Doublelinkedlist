@@ -95,5 +95,60 @@ void hapus()
 
     Node *current = START;
 
+    // step 1: Traverse the list to find the node
+    while (current != NULL && current->noMhs != rollNo)
+        current = current->next;
     
+    if (current == NULL)
+    {
+        cout << "Record not found" << endl;
+        return;
+    }
+
+    // step 2: If node is at the beginning
+    if (current == START)
+    {
+        START = current->next; //step 2a: START = START.next
+        if (START != NULL) 
+            START->prev = NULL; // step 2b: START.prev = NULL
+    }
+    else
+    {
+        // step 3: Link previous node to next next of current 
+        current->prev->next = current->next; 
+
+        // step 4: If current is not the last node
+        if (current->next != NULL)
+            current->next->prev = current->prev;
+    }
+
+    // step 5: Delete the node
+    delete current;
+    cout << "Record with roll number " << rollNo << " deleted" << endl;
 }
+
+void traverse()
+{
+    if (START == NULL)
+    {
+        cout << "\nList is empty" << endl;
+        return;
+    }
+
+    // Step 1: Mark first node as currentNode
+    Node *currentNode = START;
+
+    // Step 2: Repeat until currentNode == NULL
+    cout << "\nRecords in ascending order of roll number are:\n";
+    int i = 0;
+    while (currentNode != NULL)
+    {
+
+        cout << i + 1 << ". " << currentNode->noMhs << " " << endl;
+
+        // Step 3: Move to next node
+        currentNode = currentNode->next;
+        i++;
+    }
+}
+
