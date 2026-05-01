@@ -74,3 +74,10 @@ if (current->next != NULL && nim == current->next->noMhs)
 newNode->next = current->next; // step 9a: newNode.next = current.next 
 newNode->prev = current; // step 9b: newNode.prev = current
 
+// insert Last node
+if (current->next != NULL)
+    current->next->prev = newNode; // step 9c: current.next.prev = newNode
+
+current->next = newNode; // step 9d: current.next = newNode
+}
+
