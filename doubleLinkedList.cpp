@@ -49,6 +49,9 @@ newNode->next = START;
 if (START != NULL)
 START->prev = newNode;
 
+// step 6: newNode.prev = NULL
+newNode->prev = NULL;
+
 
 }
 }
