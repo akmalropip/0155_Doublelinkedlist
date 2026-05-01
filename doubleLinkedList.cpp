@@ -31,6 +31,7 @@ cin >> nim;
 // Step 1: Allocute memory for new node
 Node *newNode = new Node();
 
-
+// Step 2: Assign volue to the doto fields
+newNode->noMhs = nim;
 }
 }
