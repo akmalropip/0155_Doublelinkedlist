@@ -39,7 +39,7 @@ if (START == NULL || nim <= START->noMhs)
 {
     if (START != NULL && nim == START->noMhs)
     {
-        cout << "\nDuplicate number not allowed." << endl;
+        cout << "\nDuplicate number not allowed" << endl;
         return;
     }
 // step 4: newNode.next = START
@@ -66,7 +66,7 @@ while (current->next != NULL && current->next->noMhs < nim)
 }
 if (current->next != NULL && nim == current->next->noMhs)
 {
-    cout << "\nDuplicate roll numbers not allowed." << endl;
+    cout << "\nDuplicate roll numbers not allowed" << endl;
     return;
 }
 
@@ -81,3 +81,19 @@ if (current->next != NULL)
 current->next = newNode; // step 9d: current.next = newNode
 }
 
+void hapus()
+{
+    if (START == NULL)
+    {
+        cout << "\nList is empty" << endl;
+        return;
+    }
+
+    cout << "\nEnter the roll number of the student whose record is to be deleted: ";
+    int rollNo;
+    cin >> rollNo;
+
+    Node *current = START;
+
+    
+}
