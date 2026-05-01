@@ -52,6 +52,10 @@ START->prev = newNode;
 // step 6: newNode.prev = NULL
 newNode->prev = NULL;
 
-
+// step 7: START = newNode
+START = newNode;
+return;
 }
+
+
 }
